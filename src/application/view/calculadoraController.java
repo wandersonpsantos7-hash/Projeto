@@ -83,9 +83,18 @@ public class calculadoraController {
     	
     	double resultado=numero1+numero2;
     	
+    	String parOuImpar;
+    	
+    	if(resultado % 2 == 0){
+    		parOuImpar=" é Par.";
+    	} else {
+    		parOuImpar=" é Impar.";
+    	}
+    	lblResultado.setText("Resultado:"+String.valueOf(resultado)+parOuImpar);
+    	
     	// retorna o valor de double para string
     	//informa o resultado na label com o setText
-    	lblResultado.setText("Resultado: "+String.valueOf(resultado));
+    
     }
     
     public void Subtrair() {
@@ -96,9 +105,15 @@ public class calculadoraController {
     	
     	double resultado=numero1-numero2;
     	
-    	// retorna o valor de double para string
-    	//informa o resultado na label com o setText
-    	lblResultado.setText("Resultado: "+String.valueOf(resultado));
+    	String parOuImpar;
+    	if(resultado % 2 == 0){
+    		parOuImpar=" é Par.";
+    	}else {
+    		parOuImpar=" é Impar.";
+    	}
+    	lblResultado.setText("Resultado:"+String.valueOf(resultado)+parOuImpar);
+    	
+
     }
     
     public void Multiplicar() {
@@ -106,9 +121,13 @@ public class calculadoraController {
     	double numero2 = Double.valueOf(txtNumero2.getText());//converte o tipo de texto para double
     	double resultado=numero1*numero2;
     	
-    	// retorna o valor de double para string
-    	//informa o resultado na label com o setText
-    	lblResultado.setText("Resultado: "+String.valueOf(resultado));
+    	String parOuImpar;
+    	if(resultado % 2 == 0){
+    		parOuImpar=" é Par.";
+    	}else {
+    		parOuImpar=" é Impar.";
+    	}
+    	lblResultado.setText("Resultado:"+String.valueOf(resultado)+parOuImpar);
     }
     
     public void Dividir() {
@@ -116,9 +135,13 @@ public class calculadoraController {
     	double numero2 = Double.valueOf(txtNumero2.getText());//converte o tipo de texto para double
     	double resultado=numero1/numero2;
     	
-    	// retorna o valor de double para string
-    	//informa o resultado na label com o setText
-    	lblResultado.setText("Resultado: "+String.valueOf(resultado));
+    	String parOuImpar;
+    	if(resultado % 2 == 0){
+    		parOuImpar=" é Par.";
+    	}else {
+    		parOuImpar=" é Impar.";
+    	}
+    	lblResultado.setText("Resultado:"+String.valueOf(resultado)+parOuImpar);
     }
 //metodo de converter string para double
     private static double StrToDbl(String numero) {
