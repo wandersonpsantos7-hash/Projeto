@@ -1,45 +1,51 @@
 package application.view;
 
-import java.net.URL;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class aplicativoController {
 
     @FXML
     private AnchorPane conteudoPane;
-
+    
     private void carregarTela(String fxmlfile) {
-        try {
-            URL fxmlLocation = getClass().getResource(fxmlfile);
-            if (fxmlLocation == null) {
-                System.err.println("ERRO CRÍTICO: Não foi possível encontrar o arquivo: " + fxmlfile);
-                return;
-            }
-
-            Parent fxml = FXMLLoader.load(fxmlLocation);
-            conteudoPane.getChildren().clear();
-            conteudoPane.getChildren().add(fxml);
-
-            AnchorPane.setTopAnchor(fxml, 0.0);
-            AnchorPane.setBottomAnchor(fxml, 0.0);
-            AnchorPane.setLeftAnchor(fxml, 0.0);
-            AnchorPane.setRightAnchor(fxml, 0.0);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    	try {
+    		Parent fxml = FXMLLoader.load(getClass().getResource(fxmlfile));
+    		conteudoPane.getChildren().clear();
+    		conteudoPane.getChildren().add(fxml);
+    		
+    		conteudoPane.setTopAnchor(fxml,0.0);
+    		conteudoPane.setBottomAnchor(fxml,0.0);
+    		conteudoPane.setLeftAnchor(fxml,0.0);
+    		conteudoPane.setRightAnchor(fxml,0.0);
+    		Scene cena =  conteudoPane.getScene();
+    		
+    		if (cena!=null) {
+    			Stage stage = (Stage) cena.getWindow();
+    			}
+    		
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    	
     }
-
+    
+    @FXML
+	private void abrirPaginaInicial() {
+    	carregarTela("aplicativo.fxml");
+	}
+    
     @FXML
     private void abrirCalculadora() {
-        carregarTela("calculadora.fxml");
+    	carregarTela("calculadora.fxml");
     }
-
-    @FXML
-    private void initialize() {
-        // Nada necessário aqui por enquanto
-    }
+	
+	@FXML
+	private void initialize() {
+		//abrirPaginaInicial();
+	}
 }

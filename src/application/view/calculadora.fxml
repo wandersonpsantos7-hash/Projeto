@@ -1,39 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" spacing="15.0" style="-fx-background-color: #ECECEC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.calculadoraController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.calculadoraController">
    <children>
-      <Label text="Calculadora Simples">
+      <ImageView fitHeight="600.0" fitWidth="360.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../../Downloads/download%20(8).jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtNumero1" layoutX="67.0" layoutY="199.0" promptText="Digite um número">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font size="18.0" />
          </font>
-      </Label>
-      
-      <TextField fx:id="txtNumero1" promptText="Digite o primeiro número" />
-      
-      <TextField fx:id="txtNumero2" promptText="Digite o segundo número" />
-      
-      <Button fx:id="btnSoma" mnemonicParsing="false" onAction="#somar" prefHeight="25.0" prefWidth="100.0" text="Somar" />
-      
-      <Label text="Resultado:">
+      </TextField>
+      <TextField fx:id="txtNumero2" layoutX="67.0" layoutY="294.0" promptText="Digite um número">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
-      </Label>
-      
-      <Label fx:id="lblResultado" text="0.0">
+      </TextField>
+      <Label fx:id="lblResultado" layoutX="60.0" layoutY="400.0" text="Resultado:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <Button fx:id="btnSoma" layoutX="35.0" layoutY="492.0" mnemonicParsing="false" onAction="#Somar" text="Somar" />
+      <Button fx:id="btnSubtrair" layoutX="100.0" layoutY="492.0" mnemonicParsing="false" text="Subtrair" />
+      <Button fx:id="btnMultiplicar" layoutX="168.0" layoutY="492.0" mnemonicParsing="false" text="Multiplicar" />
+      <Button fx:id="btnDividir" layoutX="260.0" layoutY="492.0" mnemonicParsing="false" text="Dividir" />
+      <Label layoutX="52.0" layoutY="144.0" text="Calcular Dois Números">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="btnReset" layoutX="34.0" layoutY="534.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="279.0" text="Reset" />
+      <ImageView fitHeight="191.0" fitWidth="190.0" layoutX="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Downloads/Gemini_Generated_Image_6r2krj6r2krj6r2k-removebg-preview.png" />
+         </image>
+      </ImageView>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</AnchorPane>
