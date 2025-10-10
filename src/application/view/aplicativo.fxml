@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="360.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.aplicativoController">
+   <children>
+      <AnchorPane fx:id="conteudoPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="69.0" layoutY="139.0" onAction="#abrirCalculadora" prefHeight="26.0" prefWidth="190.0" text="Calculadora" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="100.60000000000002" AnchorPane.topAnchor="139.0" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
