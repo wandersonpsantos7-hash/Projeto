@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="conteudoPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.aplicativoController">
+<AnchorPane fx:id="conteudoPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.aplicativoController">
    <children>
       <Button layoutX="39.0" layoutY="117.0" mnemonicParsing="false" onAction="#abrirCalculadora" prefHeight="46.0" prefWidth="282.0" text="CALCULADORA" wrapText="true">
          <font>
@@ -21,9 +21,9 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnIMC11" layoutX="39.0" layoutY="320.0" mnemonicParsing="false" onAction="#abrirGameCarro" prefHeight="46.0" prefWidth="282.0" text="TOP GEAR" wrapText="true">
+      <Button fx:id="btnNave" layoutX="39.0" layoutY="320.0" mnemonicParsing="false" onAction="#abrirJogoTiro" prefHeight="46.0" prefWidth="282.0" text="NAVE" wrapText="true">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Black" size="18.0" />
          </font>
       </Button>
    </children>

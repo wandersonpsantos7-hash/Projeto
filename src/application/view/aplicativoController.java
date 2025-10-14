@@ -64,5 +64,9 @@ public class aplicativoController {
 		//abrirPaginaInicial();
 	}
 
+ @FXML
+ private void abrirJogoTiro() {
+	 carregarTela("jogoTiro.fxml");
+ }
 
 }

@@ -30,7 +30,6 @@ public class jogoController {
 
     private Image imagemPlayer;
     private Image imagemObstaculo;
-    
 
 
     @FXML
