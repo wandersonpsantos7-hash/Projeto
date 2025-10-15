@@ -30,10 +30,11 @@ public class jogoTiroController {
 
     private Image imagemPlayer;
     private Image imagemObstaculo;
+    
 
     public void initialize() {
         imagemPlayer = new Image(getClass().getResourceAsStream("nave.png"));
-        imagemObstaculo = new Image(getClass().getResourceAsStream("nav_et2.png"));
+        imagemObstaculo = new Image(getClass().getResourceAsStream("neon.PNG"));
 
         canva.setFocusTraversable(true);
         canva.requestFocus();
