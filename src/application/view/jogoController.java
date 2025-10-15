@@ -30,11 +30,19 @@ public class jogoController {
 
     private Image imagemPlayer;
     private Image imagemObstaculo;
+    private Image imagemFundo;
 
+    // --- TURBO ---
+    private boolean turboAtivo = false;                 // indica se o turbo está ligado
+    private long tempoTurboAtivado = 0;                 // guarda o momento em que ativou
+    private final long duracaoTurbo = 2_000_000_000L;   // 2 segundos (em nanos)
 
     @FXML
     public void initialize() {
         // carrega imagens do jogador e obstáculo
+    	InputStream fundoStream = getClass().getResourceAsStream("estrada.jpg");
+    	imagemFundo = new Image(fundoStream);
+
         InputStream playerStream = getClass().getResourceAsStream("f1_azul.png");
         InputStream obstaculoStream = getClass().getResourceAsStream("f1_vermelho.png");
         imagemPlayer = new Image(playerStream);
@@ -44,13 +52,16 @@ public class jogoController {
         canva.setFocusTraversable(true);
         canva.requestFocus();
 
-        // obtém contexto gráfico
         GraphicsContext gc = canva.getGraphicsContext2D();
 
         // controla teclas pressionadas
         canva.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.LEFT) esquerda = true;
             if (e.getCode() == KeyCode.RIGHT) direita = true;
+            if (e.getCode() == KeyCode.SHIFT && !turboAtivo) { // ativa turbo
+                turboAtivo = true;
+                tempoTurboAtivado = System.nanoTime();
+            }
         });
 
         // controla teclas soltas
@@ -62,11 +73,11 @@ public class jogoController {
         // cria o loop do jogo
         AnimationTimer timer = new AnimationTimer() {
             long ultimoSpawn = 0;
-            long intervaloSpawn = 1_000_000_000; // 1 segundo
+            long intervaloSpawn = 600_000_000; // 1 segundo
 
             @Override
             public void handle(long now) {
-                atualizar();
+                atualizar(now);
                 desenhar(gc);
 
                 if (now - ultimoSpawn > intervaloSpawn) {
@@ -78,39 +89,25 @@ public class jogoController {
         timer.start();
     }
 
-    private void desenhar(GraphicsContext gc) {
-    	
-
-        // fundo
-        gc.setFill(Color. GRAY);
-        gc.fillRect(0, 0, larguraTela, alturaTela);
-
-        // jogador
-        gc.drawImage(imagemPlayer, playerX - raio, playerY - raio, raio * 4, raio * 4);
-
-        // obstáculos
-        for (Obstaculo obs : obstaculos) {
-            gc.drawImage(imagemObstaculo, obs.x, obs.y, obs.largura, obs.altura);
+    private void atualizar(long now) {
+        // tempo de turbo
+        if (turboAtivo && (now - tempoTurboAtivado > duracaoTurbo)) {
+            turboAtivo = false;
         }
 
-        // pontuação
-        gc.setFill(Color.BLACK);
-        gc.setFont(javafx.scene.text.Font.font(18));
-        gc.fillText("Pontuação: " + pontuacao, 10, 20);
-    }
+        double velocidadeJogador = turboAtivo ? 15 : 8; // dobra velocidade no turbo
 
-    private void atualizar() {
         // movimentação do jogador
-        if (esquerda && playerX - raio > 0) playerX -= 5;
-        if (direita && playerX + raio < larguraTela) playerX += 5;
+        if (esquerda && playerX - raio > 0) playerX -= velocidadeJogador;
+        if (direita && playerX + raio < larguraTela) playerX += velocidadeJogador;
 
-        double velocidade = 4;
+        double velocidadeObstaculo = turboAtivo ? 12 : 8; // obstáculos ficam um pouco mais rápidos
 
         // atualiza obstáculos
         Iterator<Obstaculo> it = obstaculos.iterator();
         while (it.hasNext()) {
             Obstaculo obs = it.next();
-            obs.y += velocidade;
+            obs.y += velocidadeObstaculo;
 
             double centroPlayerX = playerX + raio;
             double centroPlayerY = playerY + raio;
@@ -132,6 +129,47 @@ public class jogoController {
                 pontuacao++; // ganha ponto quando o obstáculo sai da tela
                 it.remove();
             }
+        }
+    }
+
+    private void desenhar(GraphicsContext gc) {
+        // fundo
+    	// fundo com imagem
+    	gc.drawImage(imagemFundo, 0, 0, larguraTela, alturaTela);
+
+
+        // jogador
+        gc.drawImage(imagemPlayer, playerX - raio, playerY - raio, raio * 4, raio * 4);
+
+        // --- efeito do turbo (chamas atrás do carro) ---
+        if (turboAtivo) {
+            gc.setFill(Color.ORANGE);
+            gc.fillOval(playerX + 10, playerY + raio * 2, 10, 10);
+            gc.setFill(Color.YELLOW);
+            gc.fillOval(playerX + 12, playerY + raio * 2 + 5, 6, 6);
+        }
+
+        // obstáculos
+        for (Obstaculo obs : obstaculos) {
+            gc.drawImage(imagemObstaculo, obs.x, obs.y, obs.largura, obs.altura);
+        }
+
+        // pontuação
+        gc.setFill(Color.BLACK);
+        gc.setFont(javafx.scene.text.Font.font(18));
+        gc.fillText("Pontuação: " + pontuacao, 10, 20);
+
+        // barra de turbo
+        gc.setStroke(Color.BLACK);
+        gc.strokeRect(10, 35, 100, 10);
+        if (turboAtivo) {
+            double restante = (duracaoTurbo - (System.nanoTime() - tempoTurboAtivado)) / (double) duracaoTurbo;
+            double larguraBarra = Math.max(0, restante * 100);
+            gc.setFill(Color.LIMEGREEN);
+            gc.fillRect(10, 35, larguraBarra, 10);
+        } else {
+            gc.setFill(Color.LIGHTGRAY);
+            gc.fillRect(10, 35, 100, 10);
         }
     }
 
