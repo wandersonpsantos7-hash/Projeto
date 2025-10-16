@@ -155,7 +155,7 @@ public class jogoController {
         }
 
         // pontuação
-        gc.setFill(Color.BLACK);
+        gc.setFill(Color.WHITE);
         gc.setFont(javafx.scene.text.Font.font(18));
         gc.fillText("Pontuação: " + pontuacao, 10, 20);
 

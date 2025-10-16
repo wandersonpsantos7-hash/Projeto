@@ -68,5 +68,8 @@ public class aplicativoController {
  private void abrirJogoTiro() {
 	 carregarTela("jogoTiro.fxml");
  }
-
+@FXML
+private void abrirNotas() {
+	carregarTela("notas.fxml");
+}
 }

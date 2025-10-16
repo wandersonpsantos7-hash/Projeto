@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="360.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../../Downloads/download%20(2).jpg" />
+            <Image url="@../../../../../../Downloads/Red%20wallpaper.jpg" />
          </image>
       </ImageView>
       <TextField fx:id="txtUsuario" layoutX="48.0" layoutY="234.0" prefHeight="26.0" prefWidth="262.0" promptText="Informe seu usuário">
