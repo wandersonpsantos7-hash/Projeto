@@ -34,9 +34,8 @@ public class notasController {
         txtNota4.setOnAction(e -> btnMedia.requestFocus());
         
         txtNota4.setOnAction(e -> calcularNotas());
-
+        
     }
-
     
 @FXML
 private void calcularNotas() {

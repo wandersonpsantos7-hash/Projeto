@@ -13,35 +13,45 @@
             <Image url="@../../../../../../Downloads/🔥🔥🔥.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="39.0" layoutY="277.0" mnemonicParsing="false" onAction="#abrirCalculadora" prefHeight="46.0" prefWidth="282.0" text="CALCULADORA" wrapText="true">
+      <Button layoutX="39.0" layoutY="187.0" mnemonicParsing="false" onAction="#abrirCalculadora" prefHeight="46.0" prefWidth="282.0" text="CALCULADORA" wrapText="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnIMC" layoutX="39.0" layoutY="340.0" mnemonicParsing="false" onAction="#abrirCalculadoraIMC" prefHeight="46.0" prefWidth="282.0" text="CALCULADORA IMC" wrapText="true">
+      <Button fx:id="btnIMC" layoutX="39.0" layoutY="242.0" mnemonicParsing="false" onAction="#abrirCalculadoraIMC" prefHeight="46.0" prefWidth="282.0" text="CALCULADORA IMC" wrapText="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnIMC1" layoutX="39.0" layoutY="402.0" mnemonicParsing="false" onAction="#abrirGame" prefHeight="46.0" prefWidth="282.0" text="TOP GEAR" wrapText="true">
+      <Button fx:id="btnIMC1" layoutX="39.0" layoutY="300.0" mnemonicParsing="false" onAction="#abrirGame" prefHeight="46.0" prefWidth="282.0" text="TOP GEAR" wrapText="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnNave" layoutX="39.0" layoutY="462.0" mnemonicParsing="false" onAction="#abrirJogoTiro" prefHeight="46.0" prefWidth="282.0" text="mate o Raiolon" wrapText="true">
+      <Button fx:id="btnNave" layoutX="39.0" layoutY="357.0" mnemonicParsing="false" onAction="#abrirJogoTiro" prefHeight="46.0" prefWidth="282.0" text="mate o Raiolon" wrapText="true">
          <font>
             <Font name="Arial Black" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnAbrirNotas" layoutX="39.0" layoutY="522.0" mnemonicParsing="false" onAction="#abrirNotas" prefHeight="46.0" prefWidth="282.0" text="Calcular Média" wrapText="true">
+      <Button fx:id="btnAbrirNotas" layoutX="39.0" layoutY="414.0" mnemonicParsing="false" onAction="#abrirNotas" prefHeight="46.0" prefWidth="282.0" text="Calcular Média" wrapText="true">
          <font>
             <Font name="Arial Black" size="18.0" />
          </font>
       </Button>
-      <ImageView fitHeight="264.0" fitWidth="282.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="180.0" fitWidth="209.0" layoutX="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../Downloads/Gemini_Generated_Image_6r2krj6r2krj6r2k-removebg-preview.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnAbrirNotas1" layoutX="39.0" layoutY="475.0" mnemonicParsing="false" onAction="#abrirIdade" prefHeight="46.0" prefWidth="282.0" text="Calcular Idade" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAbrirGaragem" layoutX="39.0" layoutY="539.0" mnemonicParsing="false" onAction="#abrirGaragem" prefHeight="46.0" prefWidth="282.0" text="Garagem" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

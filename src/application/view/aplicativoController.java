@@ -72,4 +72,12 @@ public class aplicativoController {
 private void abrirNotas() {
 	carregarTela("notas.fxml");
 }
+@FXML
+private void abrirIdade() {
+	carregarTela("idade.fxml");
+}
+@FXML
+private void abrirGaragem() {
+	carregarTela("carro.fxml");
+}
 }
