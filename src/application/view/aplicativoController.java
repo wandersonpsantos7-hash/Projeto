@@ -78,6 +78,6 @@ private void abrirIdade() {
 }
 @FXML
 private void abrirGaragem() {
-	carregarTela("carro.fxml");
+	carregarTela("Carros.fxml");
 }
 }

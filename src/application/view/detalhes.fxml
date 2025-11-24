@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.detalhesController">
+   <children>
+      <ImageView fitHeight="608.0" fitWidth="367.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../../Downloads/background%20black%20and%20grey.jpg" />
+         </image>
+      </ImageView>
+
+      <ImageView fitHeight="142.0" fitWidth="140.0" layoutX="110.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/Copilot_20251014_170603.png" />
+         </image>
+      </ImageView>
+
+      <ImageView fx:id="imagemCarro" fitHeight="162.0" fitWidth="271.0" layoutX="48.0" layoutY="154.0" preserveRatio="true" />
+
+      <Label fx:id="infoCarro" layoutX="30.0" layoutY="330.0" prefHeight="120.0" prefWidth="300.0" style="-fx-font-size: 14px; -fx-text-fill: white;" wrapText="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#voltarTelaCarros" text="Voltar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelLogout" layoutX="307.0" layoutY="26.0" onMouseClicked="#logout" text="Log Out" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Circle fx:id="luzStatus" fill="DARKRED" layoutX="291.0" layoutY="170.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="botaoLigar" layoutX="140.0" layoutY="450.0" onMouseClicked="#alternarEstadoCarro" text="Ligar / Desligar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
